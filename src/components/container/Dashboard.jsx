@@ -12,7 +12,8 @@ export default class Dashboard extends Component {
   
   render() {
     return (
-      <div>
+      <div className='container'>
+        <header>Flickr Feed Viewer</header>
         <SearchBar />
         <GridView />
       </div>

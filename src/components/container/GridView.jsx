@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import {getPublicFeed} from '../../repos/FlickrRepo';
+import styles from './GridView.scss';
+import Tile from '../presentational/Tile';
 
 
 export default class GridView extends Component {
@@ -23,8 +25,21 @@ export default class GridView extends Component {
   }
   
   render() {
+    let {publicFeed} = this.state;
     return (
-      <div>GridView</div>
+      <div className='gridview-container'>
+        {
+          publicFeed.length > 0 &&
+          publicFeed.map((item, index) => {
+            return(
+              <Tile
+              key={'tile_' + index}
+              item={item}
+              />
+            )
+          })
+        }
+      </div>
     );
   }
 }
