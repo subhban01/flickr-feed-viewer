@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-
+import SearchBar from '../presentational/SearchBar';
+import GridView from './GridView';
+import styles from './Dashboard.scss';
 
 export default class Dashboard extends Component {
   constructor() {
@@ -10,7 +12,10 @@ export default class Dashboard extends Component {
   
   render() {
     return (
-      <div>hello</div>
+      <div>
+        <SearchBar />
+        <GridView />
+      </div>
     );
   }
 }
