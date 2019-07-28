@@ -1,30 +1,33 @@
-import React, { Component } from "react";
-import styles from './GridView.scss';
+import React, { Component } from 'react';
+import './GridView.scss';
+import PropTypes from 'prop-types';
 import Tile from './Tile';
 
 
 export default class GridView extends Component {
-  constructor() {
-    super();
-    this.state = {};
-  }
+    constructor() {
+        super();
+        this.state = {};
+    }
 
-  render() {
-    let {publicFeed} = this.props;
-    return (
-      <div className='gridview-container'>
-        {
-          publicFeed.length > 0 &&
-          publicFeed.map((item, index) => {
-            return(
+    render() {
+        const { publicFeed } = this.props;
+        return (
+            <div className="gridview-container">
+                {
+                    (publicFeed.length > 0)
+          && publicFeed.map((item, index) => (
               <Tile
-              key={'tile_' + index}
-              item={item}
+                  key={`tile_${index.author_id}`}
+                  item={item}
               />
-            )
-          })
-        }
-      </div>
-    );
-  }
+          ))
+                }
+            </div>
+        );
+    }
 }
+
+GridView.propTypes = {
+    publicFeed: PropTypes.array.isRequired,
+};

@@ -1,5 +1,7 @@
 import http from 'axios';
-import {baseURI, publicPhotoFeed, keyword_beach, keyword_flowers} from '../constants/Constants';
+import {
+    baseURI, publicPhotoFeed, keywordBeach, keywordFlowers,
+} from '../constants/Constants';
 
 
 export function getPublicFeed() {
@@ -7,9 +9,9 @@ export function getPublicFeed() {
 }
 
 export function searchBeach() {
-    return http.get(baseURI + keyword_beach);
+    return http.get(baseURI + keywordBeach);
 }
 
 export function searchFlowers() {
-    return http.get(baseURI + keyword_flowers);
+    return http.get(baseURI + keywordFlowers);
 }

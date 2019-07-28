@@ -1,1 +1,1 @@
-import Dashboard from "./components/container/Dashboard.jsx";
+import './components/container/Dashboard';
