@@ -15,12 +15,19 @@ export default class SearchBar extends Component {
   handleSearch = () => {
     this.props.handleSearch(this.searchValue);
   }
+
+  onKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      this.handleSearch();
+    }
+  }
   
   render() {
     return (
       <div className="searchbar">
           <input type="text" placeholder="Search for something..."
-           className='search-field' onChange={evt => this.updateInputValue(evt)}></input>
+           className='search-field' onChange={evt => this.updateInputValue(evt)}
+           onKeyPress={this.onKeyPress}></input>
           <input type="button" value='Search' className='search-button' onClick={this.handleSearch}></input>
           <div className='info'>[ Currently only searchable for "beach" and "flowers" due to CORS limitation]</div>
       </div>
