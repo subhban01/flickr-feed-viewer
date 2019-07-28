@@ -11,8 +11,9 @@ export default class SearchBar extends Component {
   render() {
     return (
       <div className="searchbar">
-          <input type="text" placeholder="Search..." className='search-field'></input>
-          <input type="button" value='Search' className='search-button'></input>
+          <input type="text" placeholder="Search for something..." className='search-field'></input>
+          <input type="button" value='Search' className='search-button' onClick={this.props.handleSearch}></input>
+          <div className='info'>[ Currently only searchable for "beach", "sunset" and "park" ]</div>
       </div>
     );
   }

@@ -1,7 +1,7 @@
 .searchbar{
     border-bottom: 1px solid #686868;
-    border-top: 1px solid #686868;
     padding: 20px 0;
+    display: flex;
 }
 
 .search-button{
@@ -11,6 +11,12 @@
     height: 30px;
     color: #fff;
     border-radius: 3px;
+    outline: none;
+    margin-right: 20px;
+    &:hover{
+        background-color: #407ce0;
+        cursor: pointer;
+    }
 }
 
 .search-field{
@@ -19,4 +25,10 @@
     border: none;
     padding: 0 10px;
     margin-right: 20px;
+}
+
+.info{
+    line-height: 30px;
+    color: #818181;
+    font-style: italic;
 }
