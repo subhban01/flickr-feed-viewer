@@ -15,3 +15,4 @@ Pre-requisite: Node and npm shuld be installed
 * `npm start` - start local development server. Open browser and visit http://localhost:8080/
 * `npm run test` - run all unit tests
 * `npm run lint` - run eslint
+* `npm audit` - audit packages for security vulnerabilities
