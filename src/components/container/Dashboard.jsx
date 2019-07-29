@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import SearchBar from '../presentational/SearchBar';
 import GridView from '../presentational/GridView';
 import './Dashboard.scss';
@@ -60,6 +59,3 @@ export default class Dashboard extends Component {
         );
     }
 }
-
-const wrapper = document.getElementById('app');
-ReactDOM.render(<Dashboard />, wrapper);
