@@ -14,7 +14,7 @@ export default class GridView extends Component {
         const { publicFeed } = this.props;
         return (
             <div className="gridview-container">
-                {
+                { publicFeed &&
                     (publicFeed.length > 0)
           && publicFeed.map((item, index) => (
               <Tile
