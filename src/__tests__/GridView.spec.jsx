@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { shallow, configure } from 'enzyme';
+import { mount, shallow, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import GridView from '../components/presentational/GridView';
 
@@ -16,5 +16,11 @@ describe('GridView', () => {
   it('renders when empty feed is passed as props', () => {
     const component = shallow(<GridView publicFeed={[]} />);
     expect(component.hasClass('gridview-container')).toBeTruthy();
+  });
+
+  it('should avoid unnecessary renders', () => {
+    const spy = jest.spyOn(GridView.prototype, 'render');
+    const component = mount(<GridView />);
+    expect(spy).toHaveBeenCalledTimes(1);
   });
 });
